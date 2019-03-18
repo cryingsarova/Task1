@@ -1,16 +1,18 @@
+import java.util.Objects;
+
 public class Circle {
 
-    private double radius = 1.0;
-    private  String color  = "red";
+    private float radius = (float) 1.0;
+    private String color = "red";
 
-    public Circle(){
+    public Circle() {
     }
 
-    public Circle(double radius){
+    public Circle(float radius) {
         this.radius = radius;
     }
 
-    public Circle(double radius, String color){
+    public Circle(float radius, String color) {
         this.radius = radius;
         this.color = color;
     }
@@ -23,7 +25,7 @@ public class Circle {
         return color;
     }
 
-    public void setRadius(double radius) {
+    public void setRadius(float radius) {
         this.radius = radius;
     }
 
@@ -33,10 +35,29 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle[radius="+radius+",color="+color+"]";
+        return "Circle[radius=" + radius + ",color=" + color + "]";
     }
 
-    public double getArea(){
-        return Math.PI*radius*radius;
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public int hashCode() {
+        int hashCode = 59;
+        hashCode = 31 * hashCode + Float.floatToIntBits(radius);
+        hashCode = 31 * hashCode + color.hashCode();
+        return hashCode;
+    }
+
+    @Override
+    public boolean equals(Object object){
+        if (this == object) return true;
+        if (object == null || !(object instanceof Circle) ) return false;
+        Circle circle = (Circle) object;
+        return this.radius == circle.radius &&
+                Objects.equals(color, circle.color);
     }
 }
+
+

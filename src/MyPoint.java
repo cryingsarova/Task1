@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.Objects;
 
 public class MyPoint {
     private int x=0;
@@ -54,4 +55,21 @@ public class MyPoint {
     public double distance(){
         return distance(0,0);
     }
+
+    @Override
+    public int hashCode() {
+        int hashCode = 59;
+        hashCode = 31 * hashCode + x;
+        hashCode = 31 * hashCode + y;
+        return hashCode;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || !(object instanceof MyPoint)) return false;
+        return x == ((MyPoint) object).x && y == ((MyPoint) object).y;
+    }
+
+
 }

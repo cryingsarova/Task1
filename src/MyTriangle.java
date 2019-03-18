@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class MyTriangle{
     private MyPoint v1;
     private MyPoint v2;
@@ -38,4 +40,25 @@ public class MyTriangle{
             return "Scalene";
         }
     }
+
+    @Override
+    public int hashCode() {
+        int hashCode = 59;
+        hashCode = 31 * hashCode + v1.hashCode();
+        hashCode = 31 * hashCode + v2.hashCode();
+        hashCode = 31 * hashCode + v3.hashCode();
+        return hashCode;
+    }
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || !(object instanceof MyTriangle)) return false;
+        return v1.equals(((MyTriangle) object).v1) &&
+                v2.equals(((MyTriangle) object).v2) &&
+                v3.equals(((MyTriangle) object).v3);
+    }
+
+
+
+
 }

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee {
 
     private int id;
@@ -49,5 +51,23 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee[id="+id+",name="+firstName+" "+lastName+",salary="+salary+"]";
+    }
+
+    @Override
+    public int hashCode(){
+        int hashCode = 59;
+        hashCode = 31 * hashCode + id;
+        hashCode = 31 * hashCode + firstName.hashCode();
+        hashCode = 31 * hashCode + lastName.hashCode();
+        hashCode = 31 * hashCode + salary;
+        return hashCode;
+    }
+
+    @Override
+    public boolean equals(Object object){
+        if (this == object) return true;
+        else if (object == null || !(object instanceof Employee)) return  false;
+        return this.id == ((Employee) object).id && this.salary == ((Employee) object).salary &&
+                Objects.equals(this.firstName,((Employee) object).firstName) && Objects.equals(this.lastName,((Employee) object).lastName);
     }
 }

@@ -1,3 +1,6 @@
+import java.util.Objects;
+import java.util.function.DoubleBinaryOperator;
+
 public class Book {
 
     private String name;
@@ -66,5 +69,24 @@ public class Book {
             }
             resultString.deleteCharAt(resultString.length()-1);
             return resultString.toString();
+    }
+
+    @Override
+    public int hashCode(){
+        int hashCode = 59;
+        hashCode = 31 * hashCode+ name.hashCode();
+        for (Author author: authors ) {
+            hashCode = 31 * hashCode + author.hashCode();
+        }
+        hashCode = 31 * hashCode + (int)(Double.doubleToLongBits(price)^(Double.doubleToLongBits(price)>>>32));
+        hashCode = 31 * hashCode + qty;
+        return hashCode;
+    }
+
+    @Override
+    public boolean equals(Object object){
+        if (this == object) return  true;
+        if (object == null || !(object instanceof Book)) return false;
+        return Objects.equals(this.name,((Book) object).name) && this.price==((Book) object).price && Objects.equals(this.authors,((Book) object).authors);
     }
 }
