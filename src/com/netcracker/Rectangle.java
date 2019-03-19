@@ -1,4 +1,4 @@
-import java.util.Objects;
+package com.netcracker;
 
 public class Rectangle {
     private float length = 1.0f;
@@ -38,7 +38,7 @@ public class Rectangle {
 
     @Override
     public String toString() {
-        return "Rectangle[length="+length+",width="+width+"]";
+        return "com.netcracker.Rectangle[length="+length+",width="+width+"]";
     }
 
     @Override
