@@ -1,3 +1,5 @@
+package com.netcracker;
+
 import java.util.Objects;
 
 public class Employee {
@@ -50,7 +52,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee[id="+id+",name="+firstName+" "+lastName+",salary="+salary+"]";
+        return "com.netcracker.Employee[id="+id+",name="+firstName+" "+lastName+",salary="+salary+"]";
     }
 
     @Override

@@ -1,3 +1,5 @@
+package com.netcracker;
+
 import java.util.Objects;
 
 public class Author {
@@ -25,7 +27,7 @@ public class Author {
 
     @Override
     public String toString(){
-        String resultString = "Author[name="+name+
+        String resultString = "com.netcracker.Author[name="+name+
                              ",email="+email+
                              ",gender="+gender+"]";
         return resultString;

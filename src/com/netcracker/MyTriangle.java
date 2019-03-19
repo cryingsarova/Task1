@@ -1,4 +1,4 @@
-import java.util.Objects;
+package com.netcracker;
 
 public class MyTriangle{
     private MyPoint v1;
@@ -19,7 +19,7 @@ public class MyTriangle{
 
     @Override
     public String toString() {
-        return "MyTriangle[v1="+v1.toString()+
+        return "com.netcracker.MyTriangle[v1="+v1.toString()+
                 ",v2="+v2.toString()+
                 ",v3="+v3.toString()+"]";
     }

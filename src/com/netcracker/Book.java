@@ -1,5 +1,6 @@
+package com.netcracker;
+
 import java.util.Objects;
-import java.util.function.DoubleBinaryOperator;
 
 public class Book {
 
@@ -55,7 +56,7 @@ public class Book {
         authorsString.deleteCharAt(authorsString.length()-1);
         authorsString.append("}");
 
-        String resultString = "Book[name="+name+
+        String resultString = "com.netcracker.Book[name="+name+
                                 ",authors="+authorsString+
                                 ",price="+price+
                                 ",qty="+qty+"]";

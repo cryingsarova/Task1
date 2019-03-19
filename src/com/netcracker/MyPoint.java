@@ -1,5 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.Objects;
+package com.netcracker;
 
 public class MyPoint {
     private int x=0;

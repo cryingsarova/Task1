@@ -1,3 +1,5 @@
+package com.netcracker;
+
 import java.util.Objects;
 
 public class Circle {
@@ -35,7 +37,7 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle[radius=" + radius + ",color=" + color + "]";
+        return "com.netcracker.Circle[radius=" + radius + ",color=" + color + "]";
     }
 
     public double getArea() {
